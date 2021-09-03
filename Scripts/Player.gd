@@ -75,7 +75,7 @@ func _physics_process(delta):
 			accel = ACCEL_AIR
 			gravity_vec += Vector3.DOWN * gravity * delta
 	
-	if Input.is_action_just_pressed("jump"):
+	if Input.is_action_just_pressed("jump") and is_on_floor():
 		snap = Vector3.ZERO
 		gravity_vec = Vector3.UP * jump
 	
