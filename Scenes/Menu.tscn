@@ -54,7 +54,7 @@ margin_left = 226.455
 margin_top = 177.694
 margin_right = 807.455
 margin_bottom = 191.694
-text = "Dev Build 0.1.3"
+text = "Dev Build 1.0.2"
 align = 1
 __meta__ = {
 "_edit_use_anchors_": false
@@ -75,10 +75,10 @@ __meta__ = {
 
 [node name="Label" type="Label" parent="."]
 material = SubResource( 5 )
-margin_left = 404.356
-margin_top = 309.72
-margin_right = 644.356
-margin_bottom = 369.72
+margin_left = 399.571
+margin_top = 310.777
+margin_right = 639.571
+margin_bottom = 370.777
 custom_fonts/font = SubResource( 6 )
 text = "Loading..."
 __meta__ = {

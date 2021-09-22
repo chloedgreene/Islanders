@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=2]
 
-[ext_resource path="res://Scripts/IslandTerrain.gd" type="Script" id=1]
+[ext_resource path="res://Scripts/IslandTerrainCreator.cs" type="Script" id=1]
 [ext_resource path="res://assets/maujoe.basic_water_material/textures/water_normal_1.png" type="Texture" id=2]
 
 [sub_resource type="CubeMesh" id=1]
@@ -90,11 +90,11 @@ void fragment(){
 
 [sub_resource type="ShaderMaterial" id=3]
 shader = SubResource( 2 )
-shader_param/beer_factor = 0.8
-shader_param/foam_distance = 0.01
-shader_param/foam_max_distance = 0.4
-shader_param/foam_min_distance = 0.04
-shader_param/foam_color = Color( 1, 1, 1, 1 )
+shader_param/beer_factor = 1.0
+shader_param/foam_distance = 0.0
+shader_param/foam_max_distance = 0.0
+shader_param/foam_min_distance = 0.0
+shader_param/foam_color = Color( 1, 1, 1, 0 )
 shader_param/surface_noise_tiling = Vector2( 1, 4 )
 shader_param/surface_noise_scroll = Vector3( 0.03, 0.03, 0 )
 shader_param/surface_noise_cutoff = 1.0
