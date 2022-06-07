@@ -7,7 +7,6 @@ func _ready():
 	
 	
 func generate_island():
-	#OLD CODE DONT USE
 	randomize()
 	
 	var surface_tool = SurfaceTool.new()

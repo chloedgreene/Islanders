@@ -10,12 +10,5 @@ func _ready():
 	
 
 func _button_pressed():
-	#When button is pressed start loading Island! 
-	
-	load_scene();
-	
-
-func load_scene():
-	
-	get_tree().change_scene("res://Scenes/Game.tscn")
-
+	print("Testing");
+	get_tree().change_scene("res://Scenes/LoadingScene.tscn")

@@ -1,8 +1,6 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Scripts/Player.gd" type="Script" id=1]
-[ext_resource path="res://Prefabs/ColorFilter.gd" type="Script" id=2]
-[ext_resource path="res://Resources/vignette.png" type="Texture" id=3]
 
 [sub_resource type="CapsuleMesh" id=1]
 radius = 0.5
@@ -21,30 +19,13 @@ height = 0.465248
 [sub_resource type="Shader" id=5]
 code = "shader_type canvas_item;
 
-uniform bool use_shader = false;
-
-uniform sampler2D vignette;
-
 void fragment(){
 	vec4 bg = texture(SCREEN_TEXTURE,SCREEN_UV);
-	
-	if(use_shader){
-	vec3 vignette_color = texture(vignette, UV).rgb;
-	// Screen texture stores gaussian blurred copies on mipmaps.
-	COLOR.rgb = textureLod(SCREEN_TEXTURE, SCREEN_UV, (1.0 - vignette_color.r) * 4.0).rgb;
-	COLOR.rgb *= texture(vignette, UV).rgb;
-	//vec4(bg.r/1.5f,bg.g/1.5f,bg.b,1f) - 
-	
-	COLOR += vec4(bg.r/2.5f,bg.g/2.5f,bg.b,1f);
-	}else{
-		COLOR = bg;
-	}
+	COLOR = vec4(bg.r,bg.g,bg.b,1f);
 }"
 
 [sub_resource type="ShaderMaterial" id=6]
 shader = SubResource( 5 )
-shader_param/use_shader = false
-shader_param/vignette = ExtResource( 3 )
 
 [node name="Player" type="KinematicBody"]
 script = ExtResource( 1 )
@@ -87,7 +68,6 @@ material/0 = null
 material = SubResource( 6 )
 margin_right = 1029.0
 margin_bottom = 605.0
-script = ExtResource( 2 )
 __meta__ = {
 "_edit_use_anchors_": false
 }

@@ -15,9 +15,6 @@ export(Gradient) var gradient setget set_gradient
 
 var data
 
-func map(value, istart, istop, ostart, ostop):
-	return ostart + (ostop - ostart) * ((value - istart) / (istop - istart))
-
 func _init():
 	data = Image.new()
 	data.create(size.x, size.y, false, Image.FORMAT_RGBA8)
@@ -43,12 +40,7 @@ func _update():
 			for y in range(size.y):
 				var dist = Vector2(x / ratio, y).distance_to(Vector2(radius.x / ratio, radius.y))
 				var ofs = dist / radius.y
-				
 				var color = gradient.interpolate(ofs)
-				
-				
-				
-				
 				data.set_pixel(x, y, color)
 
 	# Rectangular
