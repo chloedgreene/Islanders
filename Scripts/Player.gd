@@ -22,6 +22,9 @@ onready var camera = $Head/Camera
 func _ready():
 	#hides the cursor
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+	if $"Detect Ground".is_colliding():
+		print("hello")
+		$"Detect Ground".queue_free()
 	
 	
 
@@ -69,7 +72,7 @@ func _physics_process(delta):
 		if is_in_water():
 			snap = Vector3.DOWN
 			accel = ACCEL_AIR
-			gravity_vec -= (Vector3.DOWN * gravity * delta)
+			gravity_vec -= (Vector3.DOWN * gravity * delta) / 4
 		else:
 			snap = Vector3.DOWN
 			accel = ACCEL_AIR
@@ -81,8 +84,8 @@ func _physics_process(delta):
 	
 	
 	#make it move
-	velocity = velocity.linear_interpolate(direction * speed, accel * delta)
-	movement = velocity + gravity_vec
+	#velocity = velocity.linear_interpolate(direction * speed, accel * delta)
+	#movement = velocity + gravity_vec
 	
 	move_and_slide_with_snap(movement, snap, Vector3.UP)
 	

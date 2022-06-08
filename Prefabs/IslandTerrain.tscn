@@ -208,12 +208,12 @@ void fragment()
 shader = SubResource( 2 )
 shader_param/WATER_COL = Color( 0.04, 0.38, 0.88, 1 )
 shader_param/WATER2_COL = Color( 0.04, 0.35, 0.78, 1 )
-shader_param/FOAM_COL = Color( 0.8125, 0.9609, 0.9648, 1 )
-shader_param/distortion_speed = 2.247
-shader_param/tile = Vector2( 64, 64 )
-shader_param/height = 2.0
+shader_param/FOAM_COL = Color( 0.12549, 0.878431, 0.898039, 1 )
+shader_param/distortion_speed = 0.5
+shader_param/tile = Vector2( 1024, 1024 )
+shader_param/height = 0.0
 shader_param/wave_size = Vector2( 0, 0 )
-shader_param/wave_speed = -0.07
+shader_param/wave_speed = 0.0
 
 [node name="IslandTerrain" type="Spatial"]
 script = ExtResource( 1 )

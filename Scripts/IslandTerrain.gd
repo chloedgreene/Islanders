@@ -68,12 +68,13 @@ func generate_island():
 	surface_tool.create_from(array_mesh,0)
 	surface_tool.generate_normals()
 	
-	var material = SpatialMaterial.new()
+	var material = preload("res://Resources/IslandMaterial.tres")
+	
+	# we load the material here go the the asset dierectory for more info on how the island is rendered, might have to fix to move from gles3 to gles2!
 	
 	var mesh_instance = MeshInstance.new()
 	mesh_instance.mesh = surface_tool.commit()
 	mesh_instance.create_trimesh_collision()
-	material.albedo_color = Color.darkgreen
 	mesh_instance.material_override = material
 	
 	#mesh_instance.scale = Vector3(256,mesh_instance.scale.y,256)
