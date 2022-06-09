@@ -13,9 +13,27 @@ _global_script_classes=[ {
 "class": "CustomGradientTexture",
 "language": "GDScript",
 "path": "res://assets/maujoe.custom_gradient_texture/custom_gradient_texture.gd"
+}, {
+"base": "OculusTracker",
+"class": "OculusHandTracker",
+"language": "GDScript",
+"path": "res://addons/godot_ovrmobile/example_scenes/oculus_hand_tracker.gd"
+}, {
+"base": "OculusTracker",
+"class": "OculusTouchController",
+"language": "GDScript",
+"path": "res://addons/godot_ovrmobile/example_scenes/oculus_touch_controller.gd"
+}, {
+"base": "ARVRController",
+"class": "OculusTracker",
+"language": "GDScript",
+"path": "res://addons/godot_ovrmobile/example_scenes/oculus_tracker.gd"
 } ]
 _global_script_class_icons={
-"CustomGradientTexture": ""
+"CustomGradientTexture": "",
+"OculusHandTracker": "",
+"OculusTouchController": "",
+"OculusTracker": ""
 }
 
 [application]
@@ -29,6 +47,10 @@ config/icon="res://icon.png"
 window/size/test_width=1024
 window/size/test_height=600
 window/stretch/aspect="expand"
+
+[gdnative]
+
+singletons=[ "res://addons/godot_ovrmobile/godot_ovrmobile.gdnlib" ]
 
 [input]
 
