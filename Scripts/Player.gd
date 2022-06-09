@@ -56,7 +56,7 @@ func _process(delta):
 	
 
 func is_in_water():
-	return self.translation.y <= 1
+	return self.translation.y <= 0.5
 
 func _physics_process(delta):
 	#get keyboard input

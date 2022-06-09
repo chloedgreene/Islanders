@@ -3,7 +3,7 @@
 [ext_resource path="res://Scripts/LoadingScene.gd" type="Script" id=1]
 
 [sub_resource type="DynamicFontData" id=1]
-font_path = "res://Roboto-Medium.ttf"
+font_path = "res://Resources/Roboto-Medium.ttf"
 
 [sub_resource type="DynamicFont" id=2]
 size = 64
