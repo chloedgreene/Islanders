@@ -30,6 +30,7 @@ func _update():
 	if type == GradientType.LINEAR:
 		for x in range(size.x):
 			var ofs = float(x) / (size.x - 1)
+			
 			var color = gradient.interpolate(ofs)
 
 			for y in range(size.y):
@@ -40,6 +41,8 @@ func _update():
 			for y in range(size.y):
 				var dist = Vector2(x / ratio, y).distance_to(Vector2(radius.x / ratio, radius.y))
 				var ofs = dist / radius.y
+				if ofs >= 1.1:
+					ofs = 1.1
 				var color = gradient.interpolate(ofs)
 				data.set_pixel(x, y, color)
 

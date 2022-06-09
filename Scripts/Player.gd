@@ -53,7 +53,7 @@ func _process(delta):
 	
 
 func is_in_water():
-	return self.translation.y <= -57.931
+	return self.translation.y <= 1
 
 func _physics_process(delta):
 	#get keyboard input
@@ -84,8 +84,8 @@ func _physics_process(delta):
 	
 	
 	#make it move
-	#velocity = velocity.linear_interpolate(direction * speed, accel * delta)
-	#movement = velocity + gravity_vec
+	velocity = velocity.linear_interpolate(direction * speed, accel * delta)
+	movement = velocity + gravity_vec
 	
 	move_and_slide_with_snap(movement, snap, Vector3.UP)
 	

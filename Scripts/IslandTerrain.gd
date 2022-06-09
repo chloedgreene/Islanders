@@ -47,9 +47,20 @@ func generate_island():
 		var data = gradient_mask.get_data()
 		data.lock();
 		var gradient_value = data.get_pixel(vertex.x + SIZE * 0.5,vertex.z+ SIZE * 0.5).g * 1.5
+		
+		var limit = 0.5
+		
+		if gradient_value >= limit:
+			gradient_value = limit
+		
 		value -= gradient_value
 		
 		vertex.y = value * 50
+		vertex.y = vertex.y + 15.931;
+		
+		if vertex.y >= 10:
+			vertex.y = vertex.y - vertex.y / 45
+		
 		data.unlock()
 		
 		if(vertex.y > -47):

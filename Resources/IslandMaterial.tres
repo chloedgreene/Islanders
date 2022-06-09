@@ -5,22 +5,25 @@ code = "shader_type spatial;
 
 uniform sampler2D gradient: hint_black;
 
+//Positive numbers cause the gradient to do right to top and in negitive to be left to top
+uniform float direction = 5;
+
 void fragment() {
 	
+	vec4 wrld_vertex = CAMERA_MATRIX * vec4(VERTEX, 1.0) * direction;
 	
-	vec2 UVnew = UV;
-	UVnew.x = UV.y;
-	
-	ALBEDO = texture(gradient,UV).rgb;
+	ALBEDO = texture(gradient,wrld_vertex.yy).rgb;
 }"
 
 [sub_resource type="Gradient" id=2]
-offsets = PoolRealArray( 0, 0.599156, 0.683544, 0.864979, 1 )
-colors = PoolColorArray( 0, 0.601562, 0.333679, 1, 0.933594, 0.92583, 0.43671, 1, 0, 0.90625, 1, 1, 0.468354, 0.788172, 0.645754, 1, 0.166016, 0.625, 0, 1 )
+offsets = PoolRealArray( 0, 0.268571 )
+colors = PoolColorArray( 0, 0.601562, 0.333679, 1, 1, 0.956863, 0.666667, 1 )
 
 [sub_resource type="GradientTexture" id=3]
 gradient = SubResource( 2 )
+width = 4096
 
 [resource]
 shader = SubResource( 1 )
+shader_param/direction = -1.0
 shader_param/gradient = SubResource( 3 )
