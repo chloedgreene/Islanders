@@ -1,1 +1,2 @@
 *.gd linguist-language GDScript
+*.so filter=lfs diff=lfs merge=lfs -text
