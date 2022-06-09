@@ -1,6 +1,7 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Scripts/Player.gd" type="Script" id=1]
+[ext_resource path="res://Prefabs/HeartBar.tscn" type="PackedScene" id=2]
 
 [sub_resource type="CapsuleMesh" id=1]
 radius = 0.5
@@ -62,9 +63,12 @@ cast_to = Vector3( 0, -1.5, 0 )
 material = SubResource( 6 )
 margin_right = 1029.0
 margin_bottom = 605.0
-__meta__ = {
-"_edit_use_anchors_": false
-}
+
+[node name="Heart Bar" parent="CanvasLayer" instance=ExtResource( 2 )]
+position = Vector2( 26, 29 )
+scale = Vector2( 2, 2 )
+heart_count = 10
+health = 7
 
 [node name="Detect Ground" type="RayCast" parent="."]
 cast_to = Vector3( 0, 69420, 0 )

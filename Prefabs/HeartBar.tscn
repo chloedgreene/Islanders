@@ -3,6 +3,5 @@
 [ext_resource path="res://Scripts/HeartBar.gd" type="Script" id=1]
 
 [node name="Heart Bar" type="Node2D"]
-position = Vector2( 39, 24 )
 script = ExtResource( 1 )
-health = 8
+health = 3

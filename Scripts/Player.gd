@@ -7,6 +7,8 @@ onready var accel = ACCEL_DEFAULT
 var gravity = 9.8
 var jump = 5
 
+export var Health = 10;
+
 var cam_accel = 40
 var mouse_sense = 0.1
 var snap
@@ -40,6 +42,7 @@ func _input(event):
 		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 
 func _process(delta):
+	
 	
 	#camera physics interpolation to reduce physics jitter on high refresh-rate monitors
 	if Engine.get_frames_per_second() > Engine.iterations_per_second:
@@ -86,6 +89,9 @@ func _physics_process(delta):
 	#make it move
 	velocity = velocity.linear_interpolate(direction * speed, accel * delta)
 	movement = velocity + gravity_vec
+	
+	if self.Health != $"CanvasLayer/Heart Bar".health:
+		$"CanvasLayer/Heart Bar".health = self.Health
 	
 	move_and_slide_with_snap(movement, snap, Vector3.UP)
 	
